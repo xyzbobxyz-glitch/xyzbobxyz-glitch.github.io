@@ -17,10 +17,34 @@
       --chipHover:#ececec;
       --max:720px;
       /* Desktop fix: prevent QR codes getting clipped in the tip dropdown */
+      @media (min-width: 641px){
+      .heroTipCorner details[open]{
+      max-height: 80vh;
+      overflow: auto;
+        }
+      }
+      /* === FIX: tip dropdown being clipped on desktop === */
 @media (min-width: 641px){
+
+  /* keep hero image nicely clipped, but don't clip the dropdown */
+  .hero { overflow: hidden; }
+
+  /* when the tip dropdown is OPEN, lift it out of the hero and float it */
   .heroTipCorner details[open]{
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 340px;
     max-height: 80vh;
     overflow: auto;
+    z-index: 9999;
+    box-shadow: 0 14px 40px rgba(0,0,0,.25);
+  }
+  /* make sure the background stays readable */
+  .heroTipCorner details[open]{
+    background: rgba(255,255,255,.96);
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 14px;
   }
 }
     }
