@@ -16,6 +16,13 @@
       --chip:#f5f5f5;
       --chipHover:#ececec;
       --max:720px;
+      /* Desktop fix: prevent QR codes getting clipped in the tip dropdown */
+@media (min-width: 641px){
+  .heroTipCorner details[open]{
+    max-height: 80vh;
+    overflow: auto;
+  }
+}
     }
 
     *{ box-sizing:border-box; }
