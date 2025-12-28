@@ -94,6 +94,22 @@ body{
     height:auto;
   }
 }
+    /* === Mobile: make the tip dropdown behave normally inside the page === */
+@media (max-width: 640px){
+  .heroTipCorner{
+    position: static !important;
+    max-width: none !important;
+    margin: 12px auto 0;
+  }
+
+  .heroTipCorner details[open]{
+    position: static !important;
+    width: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+  }
+}
 </style>
 
 </head>
